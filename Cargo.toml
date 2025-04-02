@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-momtrop = { git = "https://github.com/alphal00p/momtrop", branch = "float_refactor" }
+momtrop = { git = "https://github.com/alphal00p/momtrop"}
 rand = "0.8.5"
 serde_json = "1.0.115"
 serde = { version = "1.0", features = ["derive"] }

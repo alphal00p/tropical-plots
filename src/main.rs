@@ -68,7 +68,7 @@ fn build_1_loop_sampler<const D: usize>(
 ) -> Result<SampleGenerator<D>, String> {
     let loop_lines = vec![vec![1]; n_externals];
     let graph = build_1_loop_graph(weight, is_massive, n_externals);
-    graph.build_sampler(loop_lines, D)
+    graph.build_sampler(loop_lines)
 }
 
 fn generate_points<const D: usize>(
@@ -226,7 +226,7 @@ fn generate_dt_points() -> Result<(), io::Error> {
     let n_samples = 10_000_000;
 
     let loop_signature = vec![vec![1, 0], vec![1, 0], vec![1, -1], vec![0, 1], vec![0, 1]];
-    let dt_sampler = dt_graph.build_sampler::<1>(loop_signature, 1).unwrap();
+    let dt_sampler = dt_graph.build_sampler::<1>(loop_signature).unwrap();
 
     let zero_vector = Vector::from_array([0.]);
     let p = Vector::from_array([1.]);
